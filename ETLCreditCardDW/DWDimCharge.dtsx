@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:refId="DWDimCharge"
+  DTS:refId="Package"
   DTS:CreationDate="7/13/2022 10:24:27 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-S32GFNE"
@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimCharge"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{FDE85E96-E90E-42A0-AD14-4575CECC6FE4}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{1E6894BF-C575-4E0C-9D2B-C8AE1F7A57AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,7 +76,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{172E1D9A-4E85-48A6-9A00-63A6C310FE70}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[category]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[charge]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -178,7 +178,7 @@
                       cachedLength="31"
                       cachedName="category_desc"
                       externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[category_desc]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_desc]" />
+                      lineageId="Package\Data Flow Task\114:invalid" />
                     <inputColumn
                       refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[category_code]"
                       cachedCodepage="1252"
@@ -186,7 +186,7 @@
                       cachedLength="2"
                       cachedName="category_code"
                       externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[category_code]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_code]" />
+                      lineageId="Package\Data Flow Task\115:invalid" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -263,7 +263,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetCategoryChangesByRowVersion] ?, ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetChargeChangesByRowVersion] ?, ?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -309,28 +309,6 @@
                       name="category_no"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_desc]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[category_desc]"
-                      length="31"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_desc]"
-                      name="category_desc"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[category_code]"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_code]"
-                      name="category_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]"
                       dataType="bytes"
                       errorOrTruncationOperation="Conversion"
@@ -340,6 +318,71 @@
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]"
                       name="rowversion"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_no]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_no]"
+                      name="charge_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_no]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]"
+                      name="member_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[provider_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[provider_no]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[provider_no]"
+                      name="provider_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_dt]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_dt]"
+                      name="charge_dt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_amt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_amt]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_amt]"
+                      name="charge_amt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[statement_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[statement_no]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[statement_no]"
+                      name="statement_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_code]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_code]"
+                      name="charge_code"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -348,22 +391,40 @@
                       dataType="i4"
                       name="category_no" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[category_desc]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      name="category_desc" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[category_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="category_code" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
                       dataType="bytes"
                       length="8"
                       name="rowversion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_no]"
+                      dataType="i4"
+                      name="charge_no" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_no]"
+                      dataType="i4"
+                      name="member_no" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[provider_no]"
+                      dataType="i4"
+                      name="provider_no" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_dt]"
+                      dataType="dbTimeStamp"
+                      name="charge_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_amt]"
+                      dataType="cy"
+                      name="charge_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[statement_no]"
+                      dataType="i4"
+                      name="statement_no" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="charge_code" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -372,24 +433,47 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_no]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_no]"
+                      name="charge_no" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_no]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_no]"
+                      name="member_no" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[provider_no]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[provider_no]"
+                      name="provider_no" />
+                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_no]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_no]"
                       name="category_no" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_desc]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_desc]"
-                      name="category_desc" />
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_dt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_dt]"
+                      name="charge_dt" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_code]"
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_amt]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_amt]"
+                      name="charge_amt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[statement_no]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[statement_no]"
+                      name="statement_no" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_code]"
                       codePage="1252"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[category_code]"
-                      name="category_code" />
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[charge_code]"
+                      name="charge_code" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[rowversion]"
                       dataType="bytes"
@@ -492,7 +576,7 @@
                       cachedLength="31"
                       cachedName="category_desc"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[category_desc]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_desc]" />
+                      lineageId="Package\Data Flow Task\114:invalid" />
                     <inputColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[category_code]"
                       cachedCodepage="1252"
@@ -500,13 +584,13 @@
                       cachedLength="2"
                       cachedName="category_code"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[category_code]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_code]" />
+                      lineageId="Package\Data Flow Task\115:invalid" />
                     <inputColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[category_sk]"
                       cachedDataType="i4"
                       cachedName="category_sk"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[category_sk]"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[category_sk]" />
+                      lineageId="Package\Data Flow Task\116:invalid" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -568,14 +652,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_category]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[fact_charge]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_category]) [refTable]
-where [refTable].[category_no] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -606,12 +689,12 @@ where [refTable].[category_no] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_desc" dataType="DT_STR" length="31" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category_code" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="charge_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="member_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="provider_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="charge_datekey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="charge_dt" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="charge_amt" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="statement_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_no]};</property>
+                  name="ParameterMap"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -633,24 +716,6 @@ where [refTable].[category_no] = ?</property>
                 <input
                   refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[category_no]"
-                      cachedDataType="i4"
-                      cachedName="category_no"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[category_no]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">category_no</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -661,22 +726,6 @@ where [refTable].[category_no] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[category_sk]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[category_sk]"
-                      name="category_sk"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">category_sk</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -733,20 +782,20 @@ where [refTable].[category_no] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Category Version"
+      DTS:refId="Package\Get Charge Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{7C6BAF87-B995-41D4-AC6E-6493CD1465F2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Category Version"
+      DTS:ObjectName="Get Charge Version"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{172E1D9A-4E85-48A6-9A00-63A6C310FE70}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] &#xA;   @tableName=&quot;Category&quot;"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] &#xA;   @tableName=&quot;Charge&quot;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="last_row_version"
@@ -826,12 +875,12 @@ where [refTable].[category_no] = ?</property>
       DTS:From="Package\Get DataBase Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Get Category Version" />
+      DTS:To="Package\Get Charge Version" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{7F5282FB-E31D-44C7-9137-A864DEF1A43D}"
-      DTS:From="Package\Get Category Version"
+      DTS:From="Package\Get Charge Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\CleanUP Staging" />
@@ -873,7 +922,7 @@ where [refTable].[category_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,41.6"
+          Size="161.6,41.6"
           Id="Package\CleanUP Staging"
           TopLeft="356.153859217492,216.80644827802" />
         <NodeLayout
@@ -882,7 +931,7 @@ where [refTable].[category_no] = ?</property>
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
           Size="182.4,41.6"
-          Id="Package\Get Category Version"
+          Id="Package\Get Charge Version"
           TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
           Size="185.6,41.6"
@@ -920,18 +969,18 @@ where [refTable].[category_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="441.446166825154,182.92257847136">
+          TopLeft="439.846166825154,182.92257847136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.8838698066608"
+              EndConnector="0,33.88386980666"
               Start="0,0"
-              End="0,26.3838698066608">
+              End="0,26.38386980666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.3838698066608" />
+                    End="0,26.38386980666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -942,18 +991,18 @@ where [refTable].[category_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="442.130782498975,258.40644827802">
+          TopLeft="440.530782498976,258.40644827802">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.2387092645905"
+              EndConnector="0,33.238709264591"
               Start="0,0"
-              End="0,25.7387092645905">
+              End="0,25.738709264591">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7387092645905" />
+                    End="0,25.738709264591" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1015,10 +1064,6 @@ where [refTable].[category_no] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114.4,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="349.938962774635,208.079873911483" />
-        <NodeLayout
           Size="156.8,41.6"
           Id="Package\Data Flow Task\Get row Change"
           TopLeft="329.230781306882,120.354836858398" />
@@ -1030,64 +1075,10 @@ where [refTable].[category_no] = ?</property>
           Size="176,41.6"
           Id="Package\Data Flow Task\Add new Categories"
           TopLeft="443.461554727611,308.096771761729" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="407.384872040758,161.954836858398">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.125037053085"
-              Start="0,0"
-              End="0,38.625037053085">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.625037053085" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="424.872296107968,249.679873911483">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="106.589258619643,58.4168978502456"
-              Start="0,0"
-              End="106.589258619643,50.9168978502456">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.8502093292037" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.8502093292037"
-                    Point2="0,23.8502093292037"
-                    Point3="4,23.8502093292037" />
-                  <mssgle:LineSegment
-                    End="102.589258619643,23.8502093292037" />
-                  <mssgle:CubicBezierSegment
-                    Point1="102.589258619643,23.8502093292037"
-                    Point2="106.589258619643,23.8502093292037"
-                    Point3="106.589258619643,27.8502093292037" />
-                  <mssgle:LineSegment
-                    End="106.589258619643,50.9168978502456" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-2.5117574089285,28.8502093292037,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="349.938962774635,208.079873911483" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
           TopLeft="389.405629441302,249.679873911483">
@@ -1120,36 +1111,71 @@ where [refTable].[category_no] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-108.448043967592,28.315499449,96.3827734375,11.609375"
+              BoundingBox="-117.316696311341,28.315499449,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="407.384872040759,161.954836858398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.125037053085"
+              Start="0,0"
+              End="0,38.625037053085">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.625037053085" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="424.872296107968,249.679873911483">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106.589258619643,58.416897850246"
+              Start="0,0"
+              End="106.589258619643,50.916897850246">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8502093292039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8502093292039"
+                    Point2="0,23.8502093292039"
+                    Point3="4,23.8502093292039" />
+                  <mssgle:LineSegment
+                    End="102.589258619643,23.8502093292039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="102.589258619643,23.8502093292039"
+                    Point2="106.589258619643,23.8502093292039"
+                    Point3="106.589258619643,27.8502093292039" />
+                  <mssgle:LineSegment
+                    End="106.589258619643,50.916897850246" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.3804097526787,28.8502093292039,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dim_category]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Get row Change">
     <Properties>
@@ -1181,6 +1207,29 @@ where [refTable].[category_no] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_charge]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

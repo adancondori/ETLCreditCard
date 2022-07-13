@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimCategory"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{F54EA6C6-0013-47B5-80B1-34DD107E60F3}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{BF523754-603F-4B3E-B5DA-259B712AB00C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -888,6 +888,14 @@ where [refTable].[category_no] = ?</property>
           Size="185.6,41.6"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Sync Category Data"
+          TopLeft="358.46155160983,369.03225238812" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Update LastRowVersion"
+          TopLeft="362.30770559706,443.058058297895" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="440.076935844309,105.761289335662">
@@ -954,10 +962,6 @@ where [refTable].[category_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Sync Category Data"
-          TopLeft="358.46155160983,369.03225238812" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="445.084628695144,333.245157542611">
@@ -980,10 +984,6 @@ where [refTable].[category_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,41.6"
-          Id="Package\Update LastRowVersion"
-          TopLeft="362.30770559706,443.058058297895" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="446.184628603445,410.63225238812">
@@ -1133,7 +1133,7 @@ where [refTable].[category_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
