@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimStatement"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{F7717AE5-346C-47EC-A8EC-417355A26E0E}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{381FB077-F62B-4DCA-841A-9762E7F2D891}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -546,6 +546,13 @@
                       cachedName="statement_dt"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[statement_dt]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[statement_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[rowversion]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="rowversion"
+                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[statement_datekey]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -924,13 +931,13 @@ where [refTable].[statement_no] = ?</property>
           Id="Package\Data Flow Task"
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
-          Size="188,41.6"
-          Id="Package\Get Statement Version"
-          TopLeft="351.538474432816,141.32257847136" />
-        <NodeLayout
           Size="185.6,41.6"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Get Statement Version"
+          TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\Sync Category Data"
@@ -1074,13 +1081,13 @@ where [refTable].[statement_no] = ?</property>
           Id="Package\Data Flow Task\Lookup"
           TopLeft="352.246655166973,204.725035253409" />
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Data Flow Task\Get row Change"
-          TopLeft="329.230781306882,120.354836858398" />
-        <NodeLayout
           Size="142.4,41.6"
           Id="Package\Data Flow Task\Load Staging"
           TopLeft="197.307699544896,307.206448677948" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Data Flow Task\Get row Change"
+          TopLeft="329.230781306882,120.354836858398" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Data Flow Task\Add new Categories"
@@ -1188,7 +1195,7 @@ where [refTable].[statement_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1198,16 +1205,8 @@ where [refTable].[statement_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get row Change">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -1223,6 +1222,14 @@ where [refTable].[statement_no] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get row Change">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
