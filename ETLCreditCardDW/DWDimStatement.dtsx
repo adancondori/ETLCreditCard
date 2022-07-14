@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimStatement"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{F7717AE5-346C-47EC-A8EC-417355A26E0E}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{01FD152D-945F-45BC-89D7-78183736F498}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -924,13 +924,13 @@ where [refTable].[statement_no] = ?</property>
           Id="Package\Data Flow Task"
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
-          Size="188,41.6"
-          Id="Package\Get Statement Version"
-          TopLeft="351.538474432816,141.32257847136" />
-        <NodeLayout
           Size="185.6,41.6"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Get Statement Version"
+          TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\Sync Category Data"
@@ -938,7 +938,7 @@ where [refTable].[statement_no] = ?</property>
         <NodeLayout
           Size="168,41.6"
           Id="Package\Update LastRowVersion"
-          TopLeft="362.30770559706,443.058058297895" />
+          TopLeft="361.538474799614,443.477413130154" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="437.415397255802,105.761289335662">
@@ -1041,18 +1041,18 @@ where [refTable].[statement_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="446.184628603445,410.63225238812">
+          TopLeft="445.800013204722,410.63225238812">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.4258059097752"
+              EndConnector="0,32.8451607420341"
               Start="0,0"
-              End="0,24.9258059097752">
+              End="0,25.3451607420341">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9258059097752" />
+                    End="0,25.3451607420341" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1074,13 +1074,13 @@ where [refTable].[statement_no] = ?</property>
           Id="Package\Data Flow Task\Lookup"
           TopLeft="352.246655166973,204.725035253409" />
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Data Flow Task\Get row Change"
-          TopLeft="329.230781306882,120.354836858398" />
-        <NodeLayout
           Size="142.4,41.6"
           Id="Package\Data Flow Task\Load Staging"
           TopLeft="197.307699544896,307.206448677948" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Data Flow Task\Get row Change"
+          TopLeft="329.230781306882,120.354836858398" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Data Flow Task\Add new Categories"
@@ -1104,7 +1104,9 @@ where [refTable].[statement_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1188,7 +1190,7 @@ where [refTable].[statement_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1198,16 +1200,8 @@ where [refTable].[statement_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get row Change">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -1223,6 +1217,14 @@ where [refTable].[statement_no] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get row Change">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

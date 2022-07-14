@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimStatement"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{381FB077-F62B-4DCA-841A-9762E7F2D891}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{01FD152D-945F-45BC-89D7-78183736F498}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -546,13 +546,6 @@
                       cachedName="statement_dt"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[statement_dt]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[statement_dt]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[rowversion]"
-                      cachedDataType="bytes"
-                      cachedLength="8"
-                      cachedName="rowversion"
-                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[statement_datekey]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -945,7 +938,7 @@ where [refTable].[statement_no] = ?</property>
         <NodeLayout
           Size="168,41.6"
           Id="Package\Update LastRowVersion"
-          TopLeft="362.30770559706,443.058058297895" />
+          TopLeft="361.538474799614,443.477413130154" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="437.415397255802,105.761289335662">
@@ -1048,18 +1041,18 @@ where [refTable].[statement_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="446.184628603445,410.63225238812">
+          TopLeft="445.800013204722,410.63225238812">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.4258059097752"
+              EndConnector="0,32.8451607420341"
               Start="0,0"
-              End="0,24.9258059097752">
+              End="0,25.3451607420341">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9258059097752" />
+                    End="0,25.3451607420341" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1111,7 +1104,9 @@ where [refTable].[statement_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
