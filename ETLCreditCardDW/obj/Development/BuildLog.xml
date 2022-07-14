@@ -2,33 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETLCreditCardDW</Name>
-    <LastWriteTime>2022-07-14T00:22:22.3366814Z</LastWriteTime>
+    <LastWriteTime>2022-07-14T02:39:21.4659193Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DWDimCategory.dtsx</Name>
-      <LastWriteTime>2022-07-13T20:19:02.6092074Z</LastWriteTime>
+      <LastWriteTime>2022-07-13T23:44:34.454029Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimMember.dtsx</Name>
-      <LastWriteTime>2022-07-13T23:26:54.2554824Z</LastWriteTime>
+      <LastWriteTime>2022-07-13T23:44:34.4560074Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimProvider.dtsx</Name>
-      <LastWriteTime>2022-07-13T23:31:26.003569Z</LastWriteTime>
+      <LastWriteTime>2022-07-13T23:44:34.4570052Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimStatement.dtsx</Name>
-      <LastWriteTime>2022-07-14T01:09:29.4165834Z</LastWriteTime>
+      <LastWriteTime>2022-07-14T01:14:10.8115494Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWFactCharge.dtsx</Name>
-      <LastWriteTime>2022-07-14T01:00:27.2624018Z</LastWriteTime>
+      <LastWriteTime>2022-07-14T03:02:26.4304386Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Package1.dtsx</Name>
+      <LastWriteTime>2022-07-14T02:39:21.417033Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

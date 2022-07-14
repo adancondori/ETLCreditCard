@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWFactCharge"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{9906DAE3-6B03-429A-A747-53909C3F7FFE}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{7E99E5D6-004D-47DA-82AE-455D24EF511C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -355,7 +355,7 @@ where [refTable].[provider_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Provider.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Provider.Inputs[Lookup Input]">
@@ -557,7 +557,7 @@ where [refTable].[provider_no] = ?</property>
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_date_key]"
                       dataType="i4"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[charge_date_key]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_date_key]"
@@ -790,7 +790,7 @@ where [refTable].[statement_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Statement.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Statement.Inputs[Lookup Input]">
@@ -1376,7 +1376,7 @@ where [refTable].[charge_no] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1394,7 +1394,7 @@ where [refTable].[charge_no] = ?</property>
                 <input
                   refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -1429,12 +1429,6 @@ where [refTable].[charge_no] = ?</property>
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[provider_sk]"
                       lineageId="Package\Data Flow Task\Get Provider.Outputs[Lookup Match Output].Columns[provider_sk]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[statement_sk]"
-                      cachedDataType="i4"
-                      cachedName="statement_sk"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[statement_sk]"
-                      lineageId="Package\Data Flow Task\Get Statement.Outputs[Lookup Match Output].Columns[statement_sk]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[category_sk]"
                       cachedDataType="i4"
                       cachedName="category_sk"
@@ -1446,6 +1440,12 @@ where [refTable].[charge_no] = ?</property>
                       cachedName="charge_date_key"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[charge_datekey]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[charge_date_key]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[statement_sk]"
+                      cachedDataType="i4"
+                      cachedName="statement_sk"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[statement_sk]"
+                      lineageId="Package\Data Flow Task\Get Statement.Outputs[Lookup Match Output].Columns[statement_sk]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1691,27 +1691,27 @@ where [refTable].[charge_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\CleanUP Staging"
           TopLeft="356.923090014938,217.645157942538" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="155,42"
           Id="Package\Data Flow Task"
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Get Charge Version"
           TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
-          Size="185.6,41.6"
+          Size="186,42"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\Sync Charge Data"
           TopLeft="358.46155160983,369.03225238812" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Update LastRowVersion"
           TopLeft="362.30770559706,443.058058297895" />
         <EdgeLayout
@@ -1760,18 +1760,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="440.915397897698,259.245157942538">
+          TopLeft="441.365397897698,259.645157942538">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.3999996000725"
+              EndConnector="0,31.999999600073"
               Start="0,0"
-              End="0,24.8999996000725">
+              End="0,24.499999600073">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.8999996000725" />
+                    End="0,24.499999600073" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1782,18 +1782,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="442.884628695144,333.245157542611">
+          TopLeft="443.134628695145,333.645157542611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.787094845509"
+              EndConnector="0,35.387094845509"
               Start="0,0"
-              End="0,28.287094845509">
+              End="0,27.887094845509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.287094845509" />
+                    End="0,27.887094845509" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1833,35 +1833,35 @@ where [refTable].[charge_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184,41.6"
+          Size="186,42"
           Id="Package\Data Flow Task\OLE DB Destination 1"
           TopLeft="478.846171410127,698.380639968678" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Data Flow Task\Get Statement"
           TopLeft="332.307704496666,419.354832259227" />
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Data Flow Task\Lookup Charge"
           TopLeft="330.000012104328,609.245154743115" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Data Flow Task\Get Provider"
           TopLeft="333.846166091558,309.483866207309" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Data Flow Task\Lookup Category"
           TopLeft="325.384627319652,510.935477426968" />
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138,42"
           Id="Package\Data Flow Task\Get Member"
           TopLeft="333.400500629546,209.337938408261" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="159,42"
           Id="Package\Data Flow Task\Get row Change"
           TopLeft="329.230781306882,120.354836858398" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="171.153852431732,688.354832459191" />
         <EdgeLayout
@@ -1914,18 +1914,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="405.115640968214,161.954836858398">
+          TopLeft="405.565640968214,162.354836858398">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.3831015498631"
+              EndConnector="0,46.983101549863"
               Start="0,0"
-              End="0,39.8831015498631">
+              End="0,39.483101549863">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8831015498631" />
+                    End="0,39.483101549863" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1936,37 +1936,37 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="430.000012104328,650.845154743115">
+          TopLeft="430.000012104328,651.245154743115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="140.846159305799,47.5354852255624"
+              EndConnector="141.846159305799,47.135485225563"
               Start="0,0"
-              End="140.846159305799,40.0354852255624">
+              End="141.846159305799,39.635485225563">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.3112908728847" />
+                    End="0,15.148790872885" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.3112908728847"
-                    Point2="0,19.3112908728847"
-                    Point3="4,19.3112908728847" />
+                    Point1="0,15.148790872885"
+                    Point2="0,19.148790872885"
+                    Point3="4,19.148790872885" />
                   <mssgle:LineSegment
-                    End="136.846159305799,19.3112908728847" />
+                    End="137.846159305799,19.148790872885" />
                   <mssgle:CubicBezierSegment
-                    Point1="136.846159305799,19.3112908728847"
-                    Point2="140.846159305799,19.3112908728847"
-                    Point3="140.846159305799,23.3112908728847" />
+                    Point1="137.846159305799,19.148790872885"
+                    Point2="141.846159305799,19.148790872885"
+                    Point3="141.846159305799,23.148790872885" />
                   <mssgle:LineSegment
-                    End="140.846159305799,40.0354852255624" />
+                    End="141.846159305799,39.635485225563" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="14.6166929341493,24.3112908728847,111.6127734375,11.609375"
+              BoundingBox="15.1166929341495,24.148790872885,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2076,7 +2076,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2132,7 +2132,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2168,7 +2168,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
