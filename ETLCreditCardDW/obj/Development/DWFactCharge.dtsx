@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWFactCharge"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{7E99E5D6-004D-47DA-82AE-455D24EF511C}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{8ECBD9E5-D1A2-4990-AD23-8A86044E9A3D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -355,7 +355,7 @@ where [refTable].[provider_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Provider.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Provider.Inputs[Lookup Input]">
@@ -790,7 +790,7 @@ where [refTable].[statement_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Statement.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Statement.Inputs[Lookup Input]">
@@ -1394,7 +1394,7 @@ where [refTable].[charge_no] = ?</property>
                 <input
                   refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -1608,7 +1608,7 @@ where [refTable].[charge_no] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{172E1D9A-4E85-48A6-9A00-63A6C310FE70}"
-          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimCharge];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeFactCharges];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1707,7 +1707,7 @@ where [refTable].[charge_no] = ?</property>
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
         <NodeLayout
-          Size="166,42"
+          Size="169,42"
           Id="Package\Sync Charge Data"
           TopLeft="358.46155160983,369.03225238812" />
         <NodeLayout
@@ -1782,7 +1782,7 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="443.134628695145,333.645157542611">
+          TopLeft="443.884628695145,333.645157542611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1804,18 +1804,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="443.984628603445,410.63225238812">
+          TopLeft="444.634628603445,411.03225238812">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.425805909775"
+              EndConnector="0,32.025805909775"
               Start="0,0"
-              End="0,24.925805909775">
+              End="0,24.525805909775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.925805909775" />
+                    End="0,24.525805909775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2132,7 +2132,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

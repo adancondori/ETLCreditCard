@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWFactCharge"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{1DA49A4A-435C-4E06-95E1-BE75297BB176}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{8ECBD9E5-D1A2-4990-AD23-8A86044E9A3D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -355,7 +355,7 @@ where [refTable].[provider_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Provider.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Provider.Inputs[Lookup Input]">
@@ -790,7 +790,7 @@ where [refTable].[statement_no] = ?</property>
                 <output
                   refId="Package\Data Flow Task\Get Statement.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Get Statement.Inputs[Lookup Input]">
@@ -1394,7 +1394,7 @@ where [refTable].[charge_no] = ?</property>
                 <input
                   refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="IgnoreFailure"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -1608,7 +1608,7 @@ where [refTable].[charge_no] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{172E1D9A-4E85-48A6-9A00-63A6C310FE70}"
-          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimCharge];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeFactCharges];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2132,7 +2132,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
