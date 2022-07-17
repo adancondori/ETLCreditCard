@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWFactCharge"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{8ECBD9E5-D1A2-4990-AD23-8A86044E9A3D}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{F4B7F454-A230-48C8-B0E5-8143B2B8D06C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1691,27 +1691,27 @@ where [refTable].[charge_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\CleanUP Staging"
           TopLeft="356.923090014938,217.645157942538" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Get Charge Version"
           TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
         <NodeLayout
-          Size="169,42"
+          Size="168.8,41.6"
           Id="Package\Sync Charge Data"
-          TopLeft="358.46155160983,369.03225238812" />
+          TopLeft="360.128218210269,369.03225238812" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Update LastRowVersion"
           TopLeft="362.30770559706,443.058058297895" />
         <EdgeLayout
@@ -1782,18 +1782,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="443.884628695145,333.645157542611">
+          TopLeft="444.717961995364,333.245157542611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.387094845509"
+              EndConnector="0,35.787094845509"
               Start="0,0"
-              End="0,27.887094845509">
+              End="0,28.287094845509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.887094845509" />
+                    End="0,28.287094845509" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1804,18 +1804,18 @@ where [refTable].[charge_no] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="444.634628603445,411.03225238812">
+          TopLeft="445.417961903665,410.63225238812">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.025805909775"
+              EndConnector="0,32.425805909775"
               Start="0,0"
-              End="0,24.525805909775">
+              End="0,24.925805909775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.525805909775" />
+                    End="0,24.925805909775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1833,35 +1833,35 @@ where [refTable].[charge_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Data Flow Task\OLE DB Destination 1"
           TopLeft="478.846171410127,698.380639968678" />
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Data Flow Task\Get Statement"
           TopLeft="332.307704496666,419.354832259227" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Data Flow Task\Lookup Charge"
           TopLeft="330.000012104328,609.245154743115" />
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Data Flow Task\Get Provider"
           TopLeft="333.846166091558,309.483866207309" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Data Flow Task\Lookup Category"
           TopLeft="325.384627319652,510.935477426968" />
         <NodeLayout
-          Size="138,42"
+          Size="137.6,41.6"
           Id="Package\Data Flow Task\Get Member"
           TopLeft="333.400500629546,209.337938408261" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Data Flow Task\Get row Change"
           TopLeft="329.230781306882,120.354836858398" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="171.153852431732,688.354832459191" />
         <EdgeLayout
@@ -2076,7 +2076,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2122,7 +2122,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2132,7 +2132,7 @@ where [refTable].[charge_no] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

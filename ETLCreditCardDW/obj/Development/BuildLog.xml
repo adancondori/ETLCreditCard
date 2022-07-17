@@ -2,33 +2,33 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETLCreditCardDW</Name>
-    <LastWriteTime>2022-07-14T03:46:15.2498834Z</LastWriteTime>
+    <LastWriteTime>2022-07-17T17:04:27.690615Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DWDimCategory.dtsx</Name>
-      <LastWriteTime>2022-07-13T23:44:34.454029Z</LastWriteTime>
+      <LastWriteTime>2022-07-17T16:53:54.0502011Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimMember.dtsx</Name>
-      <LastWriteTime>2022-07-13T23:44:34.4560074Z</LastWriteTime>
+      <LastWriteTime>2022-07-17T16:53:54.0524111Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimProvider.dtsx</Name>
-      <LastWriteTime>2022-07-13T23:44:34.4570052Z</LastWriteTime>
+      <LastWriteTime>2022-07-17T16:53:54.0534096Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWDimStatement.dtsx</Name>
-      <LastWriteTime>2022-07-14T01:14:10.8115494Z</LastWriteTime>
+      <LastWriteTime>2022-07-17T17:12:26.0679589Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DWFactCharge.dtsx</Name>
-      <LastWriteTime>2022-07-17T15:49:35.8443865Z</LastWriteTime>
+      <LastWriteTime>2022-07-17T17:21:37.0416964Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
