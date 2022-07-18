@@ -1,25 +1,25 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/13/2022 10:24:27 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-S32GFNE"
   DTS:CreatorName="DESKTOP-S32GFNE\netactica"
-  DTS:DTSID="{3F2A0357-023E-4A1E-AC7C-5E9EAC1AE4D5}"
+  DTS:DTSID="{682148D8-A043-4BF6-8FBF-F939CD53C76D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="9226"
-  DTS:ObjectName="DWDimMember"
+  DTS:ObjectName="DWDimCorporation"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{3A7C1B0A-597C-4894-B03A-F786FD08F070}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{60B80223-3356-466B-95BB-42E7279F831A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Destination.CreditDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E3AF08A1-256D-4093-BA40-00D38FD4BDDC}"
+      DTS:DTSID="{3AC01861-75BE-43A6-9FFB-0A3B4288B4E8}"
       DTS:ObjectName="Destination.CreditDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Source.Credit]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{B237FCD9-3945-4C13-9EF4-DFDBFD3037C4}"
+      DTS:DTSID="{104D7D06-7957-47E5-8112-0424476817FE}"
       DTS:ObjectName="Source.Credit">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -44,7 +44,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A0C7175C-7687-4C81-912D-E2379F3EBE2A}"
+      DTS:DTSID="{0B8DAA66-3664-4D11-9BE3-E5F19391BF36}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DBTSValue">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7E28759B-4912-441F-959D-644046EAD8A6}"
+      DTS:DTSID="{009BABD2-7975-46D0-B942-AD6179F40EDA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowValue">
@@ -66,7 +66,7 @@
       DTS:refId="Package\CleanUP Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{05DABAF7-1A18-412D-AAE8-CAB803833B00}"
+      DTS:DTSID="{6341E24F-F0F1-43DC-9C05-703B33D5A7F8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="CleanUP Staging"
@@ -75,15 +75,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E3AF08A1-256D-4093-BA40-00D38FD4BDDC}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[member]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{3AC01861-75BE-43A6-9FFB-0A3B4288B4E8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[corporation]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{1E2D1359-2581-425B-B378-89A811433D62}"
+      DTS:DTSID="{26D9B8B6-FE20-4A7D-8DE1-C07B93D77CBA}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -109,7 +109,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_member]</property>
+                  name="OpenRowset">[dbo].[dim_corporation]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -166,28 +166,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[member_no]"
-                      cachedDataType="i4"
-                      cachedName="member_no"
-                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[member_no]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[lastname]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="lastname"
-                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[lastname]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[lastname]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[firstname]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="firstname"
-                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[firstname]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[firstname]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[city]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -211,29 +189,23 @@
                       cachedName="region_name"
                       externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[region_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[corp_no]"
+                      cachedDataType="i4"
+                      cachedName="corp_no"
+                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corporation_no]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[corp_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="corp_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corporation_name]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[member_sk]"
-                      dataType="i4"
-                      name="member_sk" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[member_no]"
-                      dataType="i4"
-                      name="member_no" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[lastname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="lastname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[firstname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="firstname" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       codePage="1252"
@@ -252,6 +224,20 @@
                       dataType="str"
                       length="15"
                       name="region_city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corporation_sk]"
+                      dataType="i4"
+                      name="corporation_sk" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corporation_no]"
+                      dataType="i4"
+                      name="corporation_no" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corporation_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      name="corporation_name" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -305,7 +291,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetMemberChangesByRowVersion] ?, ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE  [dbo].[GetCorporationChangesByRowVersion] ?, ?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -326,7 +312,7 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{7E28759B-4912-441F-959D-644046EAD8A6};"@endRow:Input",{A0C7175C-7687-4C81-912D-E2379F3EBE2A};</property>
+                  name="ParameterMapping">"@startRow:Input",{009BABD2-7975-46D0-B942-AD6179F40EDA};"@endRow:Input",{0B8DAA66-3664-4D11-9BE3-E5F19391BF36};</property>
               </properties>
               <connections>
                 <connection
@@ -341,58 +327,6 @@
                   refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      dataType="bytes"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      length="8"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      name="rowversion"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_no]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]"
-                      name="member_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[lastname]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[lastname]"
-                      length="15"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[lastname]"
-                      name="lastname"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[firstname]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[firstname]"
-                      length="15"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[firstname]"
-                      name="firstname"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[middleinitial]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[middleinitial]"
-                      length="1"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[middleinitial]"
-                      name="middleinitial"
-                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[street]"
                       codePage="1252"
@@ -416,77 +350,6 @@
                       name="city"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[state_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[state_prov]"
-                      name="state_prov"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[country]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[country]"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[country]"
-                      name="country"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[mail_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[mail_code]"
-                      length="10"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[mail_code]"
-                      name="mail_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[phone_no]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[phone_no]"
-                      length="13"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[phone_no]"
-                      name="phone_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[photograph]"
-                      dataType="image"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[photograph]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[photograph]"
-                      name="photograph"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[issue_dt]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[issue_dt]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[issue_dt]"
-                      name="issue_dt"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[expr_dt]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[expr_dt]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[expr_dt]"
-                      name="expr_dt"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -494,35 +357,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_no]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]"
                       name="corp_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[prev_balance]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[prev_balance]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[prev_balance]"
-                      name="prev_balance"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[curr_balance]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[curr_balance]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[curr_balance]"
-                      name="curr_balance"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_code]"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_code]"
-                      name="member_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[region_name]"
@@ -535,36 +369,20 @@
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[region_name]"
                       name="region_name"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_name]"
+                      length="31"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]"
+                      name="corp_name"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      name="rowversion" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_no]"
-                      dataType="i4"
-                      name="member_no" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[lastname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="lastname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[firstname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="firstname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[middleinitial]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="middleinitial" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[street]"
                       codePage="1252"
@@ -578,65 +396,21 @@
                       length="15"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="state_prov" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="country" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[mail_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="mail_code" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[phone_no]"
-                      codePage="1252"
-                      dataType="str"
-                      length="13"
-                      name="phone_no" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[photograph]"
-                      dataType="image"
-                      name="photograph" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[issue_dt]"
-                      dataType="dbTimeStamp"
-                      name="issue_dt" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[expr_dt]"
-                      dataType="dbTimeStamp"
-                      name="expr_dt" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_no]"
                       dataType="i4"
                       name="corp_no" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[prev_balance]"
-                      dataType="cy"
-                      name="prev_balance" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[curr_balance]"
-                      dataType="cy"
-                      name="curr_balance" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[member_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      name="member_code" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[region_name]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="region_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      name="corp_name" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -645,32 +419,6 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_no]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_no]"
-                      name="member_no" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[lastname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[lastname]"
-                      name="lastname" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[firstname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[firstname]"
-                      name="firstname" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[middleinitial]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[middleinitial]"
-                      name="middleinitial" />
-                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[street]"
                       codePage="1252"
                       dataType="str"
@@ -678,55 +426,19 @@
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[street]"
                       name="street" />
                     <outputColumn
+                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[corp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[corp_name]"
+                      name="corp_name" />
+                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[city]"
                       name="city" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[state_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[state_prov]"
-                      name="state_prov" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[country]"
-                      name="country" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[mail_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[mail_code]"
-                      name="mail_code" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[phone_no]"
-                      codePage="1252"
-                      dataType="str"
-                      length="13"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[phone_no]"
-                      name="phone_no" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[photograph]"
-                      dataType="image"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[photograph]"
-                      name="photograph" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[issue_dt]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[issue_dt]"
-                      name="issue_dt" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[expr_dt]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[expr_dt]"
-                      name="expr_dt" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[region_name]"
                       codePage="1252"
@@ -739,29 +451,6 @@
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[corp_no]"
                       name="corp_no" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[prev_balance]"
-                      dataType="cy"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[prev_balance]"
-                      name="prev_balance" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[curr_balance]"
-                      dataType="cy"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[curr_balance]"
-                      name="curr_balance" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="2"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[member_code]"
-                      name="member_code" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[rowversion]"
-                      dataType="bytes"
-                      length="8"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[rowversion]"
-                      name="rowversion" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -795,7 +484,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[staging].[member]</property>
+                  name="OpenRowset">[staging].[corporation]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -852,28 +541,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[lastname]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="lastname"
-                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[lastname]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[lastname]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[firstname]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="firstname"
-                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[firstname]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[firstname]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[member_sk]"
-                      cachedDataType="i4"
-                      cachedName="member_sk"
-                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[member_sk]"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[member_sk]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[region_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -897,25 +564,29 @@
                       cachedName="city"
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[region_city]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[corporation_sk]"
+                      cachedDataType="i4"
+                      cachedName="corporation_sk"
+                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_sk]"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[corporation_sk]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[corp_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="corp_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_name]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[corp_no]"
+                      cachedDataType="i4"
+                      cachedName="corp_no"
+                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_nro]"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[member_sk]"
-                      dataType="i4"
-                      name="member_sk" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[lastname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="lastname" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[firstname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="firstname" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       codePage="1252"
@@ -934,6 +605,20 @@
                       dataType="str"
                       length="15"
                       name="region_city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_sk]"
+                      dataType="i4"
+                      name="corporation_sk" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="31"
+                      name="corporation_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corporation_nro]"
+                      dataType="i4"
+                      name="corporation_nro" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -976,14 +661,14 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_member]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_corporation]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_member]) [refTable]
-where [refTable].[member_sk] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_corporation]) [refTable]
+where [refTable].[corporation_sk] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1014,12 +699,12 @@ where [refTable].[member_sk] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="member_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="member_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastname" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="firstname" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_street" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_city" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="corporation_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="corporation_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="corporation_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_street" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_city" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1043,15 +728,15 @@ where [refTable].[member_sk] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[member_no]"
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[corp_no]"
                       cachedDataType="i4"
-                      cachedName="member_no"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[member_no]">
+                      cachedName="corp_no"
+                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_no]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">member_sk</property>
+                          name="JoinToReferenceColumn">corporation_sk</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1071,17 +756,17 @@ where [refTable].[member_sk] = ?</property>
                   synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[member_sk]"
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[corporation_sk]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[member_sk]"
-                      name="member_sk"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[corporation_sk]"
+                      name="corporation_sk"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">member_sk</property>
+                          name="CopyFromReferenceColumn">corporation_sk</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1141,10 +826,32 @@ where [refTable].[member_sk] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Get Corporation Version"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A8F3F3FF-AFFD-40DD-A079-5707995C2EB7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Corporation Version"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3AC01861-75BE-43A6-9FFB-0A3B4288B4E8}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] &#xA;   @tableName=&quot;Corporation&quot;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="last_row_version"
+            SQLTask:DtsVariableName="User::LastRowValue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Get DataBase Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AC76EC3B-E940-4414-867A-7CE25FA712B1}"
+      DTS:DTSID="{3937A0A0-E01B-4E16-9651-0882D9016E50}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get DataBase Version"
@@ -1153,7 +860,7 @@ where [refTable].[member_sk] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{B237FCD9-3945-4C13-9EF4-DFDBFD3037C4}"
+          SQLTask:Connection="{104D7D06-7957-47E5-8112-0424476817FE}"
           SQLTask:SqlStatementSource="EXECUTE  [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1163,32 +870,10 @@ where [refTable].[member_sk] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Member Version"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6C083484-79AD-495A-B657-FEDCC81D3073}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get Member Version"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{E3AF08A1-256D-4093-BA40-00D38FD4BDDC}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] &#xA;   @tableName=&quot;Member&quot;"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="last_row_version"
-            SQLTask:DtsVariableName="User::LastRowValue" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Sync Category Data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0505B1CF-3B72-478D-9231-624A72C56020}"
+      DTS:DTSID="{937456AE-E662-4B5B-A139-F7FF72DC6EB7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Category Data"
@@ -1197,7 +882,7 @@ where [refTable].[member_sk] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E3AF08A1-256D-4093-BA40-00D38FD4BDDC}"
+          SQLTask:Connection="{3AC01861-75BE-43A6-9FFB-0A3B4288B4E8}"
           SQLTask:SqlStatementSource="EXECUTE  [dbo].[DW_MergeDimMember];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1205,7 +890,7 @@ where [refTable].[member_sk] = ?</property>
       DTS:refId="Package\Update LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D25E1002-557C-404E-B871-40C230370A40}"
+      DTS:DTSID="{CB405500-9116-41A8-A68E-C2A3FD2F3344}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LastRowVersion"
@@ -1214,8 +899,8 @@ where [refTable].[member_sk] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E3AF08A1-256D-4093-BA40-00D38FD4BDDC}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion]  @tableName='Member', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{3AC01861-75BE-43A6-9FFB-0A3B4288B4E8}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion]  @tableName='Corporation', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::DBTSValue"
@@ -1230,23 +915,23 @@ where [refTable].[member_sk] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{AD06FE0D-8CD2-4BF8-B28A-40A2513595FD}"
+      DTS:DTSID="{C57586CA-84D5-4579-8557-952E99B40B06}"
       DTS:From="Package\Get DataBase Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Get Member Version" />
+      DTS:To="Package\Get Corporation Version" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{E8B3FBB9-AE33-432C-9E45-ED6649FD2054}"
-      DTS:From="Package\Get Member Version"
+      DTS:DTSID="{1F48BE8E-20C5-48A0-A0F5-0CE70B055D8A}"
+      DTS:From="Package\Get Corporation Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\CleanUP Staging" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{F5825314-AB91-454B-ABE7-09E9E5062113}"
+      DTS:DTSID="{B866DA2D-3539-41B9-8C73-3CA651219C6B}"
       DTS:From="Package\CleanUP Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1254,7 +939,7 @@ where [refTable].[member_sk] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{52B1830C-2D0C-4216-8A51-8F4A4C7C376E}"
+      DTS:DTSID="{4271039D-08B3-4FFB-96CC-16CD644D04BA}"
       DTS:From="Package\Data Flow Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -1262,7 +947,7 @@ where [refTable].[member_sk] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{AF7934CE-4B0A-456E-B32E-2FDDF6F22D3E}"
+      DTS:DTSID="{A04B7547-B69A-4FB7-B183-12662617404D}"
       DTS:From="Package\Sync Category Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -1289,13 +974,13 @@ where [refTable].[member_sk] = ?</property>
           Id="Package\Data Flow Task"
           TopLeft="367.307705780459,291.645157542611" />
         <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Get Corporation Version"
+          TopLeft="351.538474432816,141.32257847136" />
+        <NodeLayout
           Size="185.6,41.6"
           Id="Package\Get DataBase Version"
           TopLeft="344.615397255802,64.1612893356617" />
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Get Member Version"
-          TopLeft="351.538474432816,141.32257847136" />
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\Sync Category Data"
@@ -1306,18 +991,30 @@ where [refTable].[member_sk] = ?</property>
           TopLeft="362.30770559706,443.058058297895" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="439.076935844309,105.761289335662">
+          TopLeft="437.415397255802,105.761289335662">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.5612891356983"
+              EndConnector="9.32307717701394,35.5612891356983"
               Start="0,0"
-              End="0,28.0612891356983">
+              End="9.32307717701394,28.0612891356983">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.0612891356983" />
+                    End="0,13.7806445678492" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7806445678492"
+                    Point2="0,17.7806445678492"
+                    Point3="4,17.7806445678492" />
+                  <mssgle:LineSegment
+                    End="5.32307717701394,17.7806445678492" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.32307717701394,17.7806445678492"
+                    Point2="9.32307717701394,17.7806445678492"
+                    Point3="9.32307717701394,21.7806445678492" />
+                  <mssgle:LineSegment
+                    End="9.32307717701394,28.0612891356983" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1328,7 +1025,7 @@ where [refTable].[member_sk] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="440.446166825154,182.92257847136">
+          TopLeft="443.446166825154,182.92257847136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1427,6 +1124,10 @@ where [refTable].[member_sk] = ?</property>
           Id="Package\Data Flow Task\Load Staging"
           TopLeft="201.153853532126,311.580640368605" />
         <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="349.938962774635,208.079873911483" />
+        <NodeLayout
           Size="156.8,41.6"
           Id="Package\Data Flow Task\Get row Change"
           TopLeft="329.230781306882,120.354836858398" />
@@ -1434,10 +1135,6 @@ where [refTable].[member_sk] = ?</property>
           Size="176,41.6"
           Id="Package\Data Flow Task\Add new Categories"
           TopLeft="443.461554727611,308.096771761729" />
-        <NodeLayout
-          Size="114.4,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="349.938962774635,208.079873911483" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="407.384872040759,161.954836858398">
@@ -1457,7 +1154,9 @@ where [refTable].[member_sk] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-19.09349609375,14.4135927452925,38.1869921875,9.7978515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1492,7 +1191,7 @@ where [refTable].[member_sk] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-2.5117574089285,28.8502093292037,111.6127734375,11.609375"
+              BoundingBox="-2.5117574089285,28.8502093292037,158.8634765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1528,7 +1227,7 @@ where [refTable].[member_sk] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-106.717274673338,30.2725887880112,96.3827734375,11.609375"
+              BoundingBox="-106.717274673338,30.2725887880112,132.7134765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1537,27 +1236,6 @@ where [refTable].[member_sk] = ?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Load Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get row Change">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Add new Categories">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1580,7 +1258,7 @@ where [refTable].[member_sk] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[dim_member]</Value>
+          type="q3:string">[dbo].[dim_corporation]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1589,6 +1267,27 @@ where [refTable].[member_sk] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get row Change">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Add new Categories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

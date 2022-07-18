@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimProvider"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{64171178-A13B-4D4D-A00F-77B4F1B4854D}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{451BE28C-6D32-464F-B547-FE58DF48B4DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -174,14 +174,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[provider_name]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[provider_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[corp_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="31"
-                      cachedName="corp_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corp_name]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].Columns[region_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -228,12 +220,6 @@
                       dataType="str"
                       length="15"
                       name="provider_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[corp_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      name="corp_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Add new Categories.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       codePage="1252"
@@ -476,17 +462,6 @@
                       name="provider_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_name]"
-                      length="31"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]"
-                      name="corp_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[region_name]"
                       codePage="1252"
                       dataType="str"
@@ -569,12 +544,6 @@
                       dataType="str"
                       length="2"
                       name="provider_code" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[corp_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      name="corp_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].ExternalColumns[region_name]"
                       codePage="1252"
@@ -670,13 +639,6 @@
                       length="8"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[rowversion]"
                       name="rowversion" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[corp_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[corp_name]"
-                      name="corp_name" />
                     <outputColumn
                       refId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Error Output].Columns[region_name]"
                       codePage="1252"
@@ -804,14 +766,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[region_street]"
                       lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[street]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[corp_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="31"
-                      cachedName="corp_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corp_name]"
-                      lineageId="Package\Data Flow Task\Get row Change.Outputs[OLE DB Source Output].Columns[corp_name]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].Columns[region_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -832,12 +786,6 @@
                       dataType="str"
                       length="15"
                       name="provider_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[corp_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="31"
-                      name="corp_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
                       codePage="1252"
@@ -936,7 +884,7 @@ where [refTable].[provider_no] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="provider_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="provider_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="provider_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="corp_name" dataType="DT_STR" length="31" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_street" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_city" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="provider_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="provider_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="provider_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_name" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_street" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="region_city" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1345,6 +1293,14 @@ where [refTable].[provider_no] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="349.938962774635,208.079873911483" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Data Flow Task\Load Staging"
+          TopLeft="204.23077672191,305.948384181171" />
+        <NodeLayout
           Size="156.8,41.6"
           Id="Package\Data Flow Task\Get row Change"
           TopLeft="329.230781306882,120.354836858398" />
@@ -1352,14 +1308,6 @@ where [refTable].[provider_no] = ?</property>
           Size="176,41.6"
           Id="Package\Data Flow Task\Add new Categories"
           TopLeft="443.461554727611,308.096771761729" />
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Data Flow Task\Load Staging"
-          TopLeft="204.23077672191,305.948384181171" />
-        <NodeLayout
-          Size="114.4,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="349.938962774635,208.079873911483" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
           TopLeft="389.405629441302,249.679873911483">
@@ -1458,23 +1406,25 @@ where [refTable].[provider_no] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get row Change">
+    design-time-name="Package\Data Flow Task\Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
       </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Add new Categories">
-    <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_provider]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1492,25 +1442,23 @@ where [refTable].[provider_no] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
+    design-time-name="Package\Data Flow Task\Get row Change">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Add new Categories">
+    <Properties>
       <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dim_provider]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="DWDimMember"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{AE5D4EC7-6A61-4C05-9B53-0110C552F5D3}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{3A7C1B0A-597C-4894-B03A-F786FD08F070}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
